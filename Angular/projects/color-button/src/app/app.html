@@ -1,0 +1,20 @@
+<h1>Property and Event Binding</h1>
+
+<button
+  (click)="toggle()"
+  [style.backgroundColor]="isGreen() ? 'lightpink' : 'lightblue'"
+  style="padding: 6px 14px; border: 1px solid black; border-radius: 4px; cursor: pointer;"
+>
+  Click me
+</button>
+
+<!-- Show message + input only when button is clicked -->
+<div *ngIf="showMessage()">
+  <p>{{ text() }}</p>
+
+  <input
+    type="text"
+    [(ngModel)]="text"
+    style="padding: 4px; margin-top: 5px;"
+  />
+</div>

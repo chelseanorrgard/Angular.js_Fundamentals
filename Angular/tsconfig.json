@@ -28,6 +28,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/color-button/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/color-button/tsconfig.spec.json"
     }
   ]
 }

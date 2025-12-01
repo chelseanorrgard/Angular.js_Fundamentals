@@ -1,0 +1,33 @@
+<div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #ddd; font-family: Arial, sans-serif;">
+  <h3 style="color: #333;">Division Calculator</h3>
+  <p style="color: #666; margin-bottom: 20px;">
+    Divide the result from above by selecting a number from the dropdown menu.
+  </p>
+
+  <div *ngIf="resultFromAddition !== null" style="margin-bottom: 20px;">
+    <label style="margin-right: 10px; font-weight: bold;">Divide {{ resultFromAddition }} by:</label>
+    <select 
+      (change)="selectDivisor(+$any($event.target).value)"
+      [value]="divisor"
+      style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;"
+    >
+      <option *ngFor="let num of divisorOptions" [value]="num">{{ num }}</option>
+    </select>
+  </div>
+
+  <button
+    *ngIf="resultFromAddition !== null"
+    (click)="performDivision()"
+    style="padding: 6px 14px; border: 1px solid black; border-radius: 4px; cursor: pointer; background-color: lightpink;"
+  >
+    Calculate Division
+  </button>
+
+  <div *ngIf="divisionResult !== null" style="margin-top: 20px; font-size: 20px; font-weight: bold; color: #333;">
+    {{ resultFromAddition }} ÷ {{ divisor }} = {{ divisionResult.toFixed(2) }}
+  </div>
+
+  <div *ngIf="resultFromAddition === null" style="color: #999; font-style: italic;">
+    Please generate a random number first to use the division calculator.
+  </div>
+</div>

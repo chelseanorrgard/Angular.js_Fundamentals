@@ -1,0 +1,32 @@
+<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+  <h2 style="color: #333;">Random Number Generator with Addition</h2>
+  <p style="color: #666; max-width: 500px; margin: 10px auto 30px;">
+    This application generates a random number between 1 and 100. 
+    You can optionally enter a number in the input field below, and when you click the button, 
+    it will add your number to the randomly generated number and display the result.
+  </p>
+
+  <div style="margin-bottom: 20px;">
+    <label style="margin-right: 10px; font-weight: bold;">Enter a number to add:</label>
+    <input 
+      type="number" 
+      [(ngModel)]="inputNumber"
+      placeholder="0"
+      style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; width: 100px;"
+    />
+  </div>
+
+  <button
+    (click)="generateRandomNumber()"
+    style="padding: 6px 14px; border: 1px solid black; border-radius: 4px; cursor: pointer; background-color: lightblue;"
+  >
+    Generate Random Number
+  </button>
+
+  <div *ngIf="randomNumber !== null && result !== null" style="margin-top: 30px; font-size: 20px; font-weight: bold; color: #333;">
+    {{ randomNumber }} + {{ inputNumber }} = {{ result }}
+  </div>
+
+  <!-- Add the division component -->
+  <app-division [resultFromAddition]="result"></app-division>
+</div>

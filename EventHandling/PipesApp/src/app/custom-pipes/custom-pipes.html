@@ -1,0 +1,109 @@
+<div style="max-width: 900px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h2 style="color: #333; text-align: center;">Custom Pipes Demo 🎨</h2>
+  <p style="text-align: center; color: #666; margin-bottom: 40px;">
+    Try our custom pipes: Reverse a string or remove everything except letters!
+  </p>
+
+  <!-- Input Section -->
+  <div style="background-color: #f5f5f5; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+    <label style="display: block; font-weight: bold; margin-bottom: 10px; color: #555;">
+      Enter your text:
+    </label>
+    <input 
+      type="text" 
+      [(ngModel)]="inputText"
+      placeholder="Type something like: Hello123 World!"
+      style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 4px; font-size: 16px; box-sizing: border-box;"
+    />
+    
+    <div style="margin-top: 20px; display: flex; gap: 10px;">
+      <button
+        (click)="transformText()"
+        style="padding: 10px 20px; border: 1px solid black; border-radius: 4px; cursor: pointer; background-color: lightblue; font-weight: bold;"
+      >
+        Transform Text
+      </button>
+      <button
+        (click)="reset()"
+        style="padding: 10px 20px; border: 1px solid black; border-radius: 4px; cursor: pointer; background-color: lightcoral; font-weight: bold;"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <!-- Results Section -->
+  <div *ngIf="showResults && inputText" style="margin-top: 30px;">
+    <!-- Original Text -->
+    <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #2196F3;">
+      <h3 style="color: #1565c0; margin-top: 0;">📝 Original Text</h3>
+      <p style="font-size: 18px; color: #333; font-family: monospace; background-color: white; padding: 15px; border-radius: 4px;">
+        {{ inputText }}
+      </p>
+    </div>
+
+    <!-- Reversed Text -->
+    <div style="background-color: #f3e5f5; padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #9c27b0;">
+      <h3 style="color: #6a1b9a; margin-top: 0;">🔄 Reversed Text</h3>
+      <p style="font-size: 18px; color: #333; font-family: monospace; background-color: white; padding: 15px; border-radius: 4px;">
+        {{ inputText | reverse }}
+      </p>
+      <p style="color: #666; font-size: 14px; margin-top: 10px; font-style: italic;">
+        Using custom <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">reverse</code> pipe
+      </p>
+    </div>
+
+    <!-- Letters Only -->
+    <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #4caf50;">
+      <h3 style="color: #2e7d32; margin-top: 0;">🔤 Letters Only</h3>
+      <p style="font-size: 18px; color: #333; font-family: monospace; background-color: white; padding: 15px; border-radius: 4px;">
+        {{ inputText | lettersOnly }}
+      </p>
+      <p style="color: #666; font-size: 14px; margin-top: 10px; font-style: italic;">
+        Using custom <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">lettersOnly</code> pipe (removes numbers, spaces, symbols)
+      </p>
+    </div>
+
+    <!-- Combined Pipes -->
+    <div style="background-color: #fff3e0; padding: 20px; border-radius: 8px; border-left: 4px solid #ff9800;">
+      <h3 style="color: #e65100; margin-top: 0;">🎭 Bonus: Both Pipes Combined!</h3>
+      <p style="font-size: 18px; color: #333; font-family: monospace; background-color: white; padding: 15px; border-radius: 4px;">
+        {{ inputText | lettersOnly | reverse }}
+      </p>
+      <p style="color: #666; font-size: 14px; margin-top: 10px; font-style: italic;">
+        First removes non-letters, then reverses the result! Pipes can be chained! 🔗
+      </p>
+    </div>
+  </div>
+
+  <!-- Instructions when no results -->
+  <div *ngIf="!showResults" style="background-color: #fce4ec; padding: 20px; border-radius: 8px; text-align: center; color: #c2185b;">
+    <p style="margin: 0; font-size: 16px;">
+      👆 Enter some text above and click "Transform Text" to see the custom pipes in action!
+    </p>
+    <p style="margin: 10px 0 0 0; font-size: 14px; font-style: italic;">
+      Try something like: "Hello123 World!" or "Test@2024#Angular"
+    </p>
+  </div>
+
+  <!-- Explanation Section -->
+  <div style="margin-top: 40px; background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+    <h3 style="color: #333; margin-top: 0;">🛠️ How Custom Pipes Work</h3>
+    <div style="color: #555; line-height: 1.8;">
+      <p><strong>Creating a Custom Pipe:</strong></p>
+      <ol style="margin-left: 20px;">
+        <li>Use <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">ng generate pipe [name]</code> command</li>
+        <li>Implement the <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">PipeTransform</code> interface</li>
+        <li>Write your transformation logic in the <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">transform()</code> method</li>
+        <li>Import and use it in your component just like built-in pipes!</li>
+      </ol>
+
+      <p style="margin-top: 15px;"><strong>In this example:</strong></p>
+      <ul style="margin-left: 20px;">
+        <li><strong>ReversePipe:</strong> Splits the string into characters, reverses them, and joins back together</li>
+        <li><strong>LettersOnlyPipe:</strong> Uses regex to remove any character that isn't a letter (A-Z, a-z)</li>
+        <li><strong>Chaining:</strong> Pipes can be combined together - the output of one becomes the input of the next!</li>
+      </ul>
+    </div>
+  </div>
+</div>

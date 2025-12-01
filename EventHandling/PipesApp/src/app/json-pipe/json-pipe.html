@@ -1,0 +1,28 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h2 style="color: #333; text-align: center;">JsonPipe Component Demo</h2>
+  <p style="text-align: center; color: #666; margin-bottom: 40px;">
+    This component demonstrates how to use JsonPipe to display JavaScript objects and arrays as formatted JSON strings.
+  </p>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+    <h3 style="color: #555; margin-top: 0;">JavaScript Object</h3>
+    <p><strong>Object (testObject):</strong></p>
+    <pre style="background-color: #fff; padding: 15px; border-radius: 4px; border: 1px solid #ddd; overflow-x: auto;">{{ testObject | json }}</pre>
+  </div>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+    <h3 style="color: #555; margin-top: 0;">JavaScript Array</h3>
+    <p><strong>Array (testArray):</strong></p>
+    <pre style="background-color: #fff; padding: 15px; border-radius: 4px; border: 1px solid #ddd; overflow-x: auto;">{{ testArray | json }}</pre>
+  </div>
+
+  <div style="background-color: #e8f4f8; padding: 20px; border-radius: 8px; border-left: 4px solid #2196F3;">
+    <h4 style="color: #1976D2; margin-top: 0;">💡 What is JsonPipe?</h4>
+    <p style="color: #555; line-height: 1.6;">
+      JsonPipe transforms JavaScript objects and arrays into JSON-formatted strings. 
+      This is extremely useful for debugging and displaying complex data structures in your templates. 
+      The <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">json</code> pipe 
+      automatically formats the output with proper indentation, making it easy to read.
+    </p>
+  </div>
+</div>

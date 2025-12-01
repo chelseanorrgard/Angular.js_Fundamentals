@@ -1,0 +1,57 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h2 style="color: #333; text-align: center;">Angular Built-in Pipes Demo</h2>
+  <p style="text-align: center; color: #666; margin-bottom: 40px;">
+    This page demonstrates various built-in Angular pipes for formatting data.
+  </p>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+    <h3 style="color: #555; margin-top: 0;">DatePipe</h3>
+    <p><strong>Original:</strong> {{ today }}</p>
+    <p><strong>Short date:</strong> {{ today | date:'short' }}</p>
+    <p><strong>Full date:</strong> {{ today | date:'fullDate' }}</p>
+    <p><strong>Custom format:</strong> {{ today | date:'MMMM d, y, h:mm a' }}</p>
+  </div>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+    <h3 style="color: #555; margin-top: 0;">CurrencyPipe</h3>
+    <p><strong>Original:</strong> {{ amount }}</p>
+    <p><strong>USD currency:</strong> {{ amount | currency:'USD':'symbol':'1.2-2' }}</p>
+    <p><strong>EUR currency:</strong> {{ amount | currency:'EUR':'symbol':'1.2-2' }}</p>
+  </div>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+    <h3 style="color: #555; margin-top: 0;">DecimalPipe</h3>
+    <p><strong>Original:</strong> {{ amount }}</p>
+    <p><strong>Formatted (1.2-2):</strong> {{ amount | number:'1.2-2' }}</p>
+    <p><strong>Formatted (1.0-0):</strong> {{ amount | number:'1.0-0' }}</p>
+  </div>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+    <h3 style="color: #555; margin-top: 0;">PercentPipe</h3>
+    <p><strong>Original:</strong> {{ percent }}</p>
+    <p><strong>As percentage:</strong> {{ percent | percent }}</p>
+    <p><strong>With 2 decimals:</strong> {{ percent | percent:'1.2-2' }}</p>
+  </div>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+    <h3 style="color: #555; margin-top: 0;">UpperCase/LowerCase Pipes</h3>
+    <p><strong>Original:</strong> {{ message }}</p>
+    <p><strong>Lowercase:</strong> {{ message | lowercase }}</p>
+    <p><strong>Uppercase:</strong> {{ message | uppercase }}</p>
+  </div>
+
+  <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+    <h3 style="color: #555; margin-top: 0;">JsonPipe</h3>
+    <p><strong>User object as JSON:</strong></p>
+    <pre style="background-color: #fff; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">{{ user | json }}</pre>
+  </div>
+</div>
+
+<!-- Addition of JsonPipe component -->
+<app-json-pipe></app-json-pipe>
+
+<!-- Addition of AsyncPipe component-->
+<app-async-pipe></app-async-pipe>
+
+<!-- Addition of CustomPipes component-->
+<app-custom-pipes></app-custom-pipes> 

@@ -1,0 +1,112 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h1 style="text-align: center; color: #333;">Attribute Directive: Text Color 🎨</h1>
+  <p style="text-align: center; color: #666; margin-bottom: 40px;">
+    This directive changes the text color of elements based on a specified color input.
+  </p>
+
+  <div style="background-color: #f5f5f5; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+    <h2 appTextColor="green">This is green! 🟢</h2>
+    <h2 appTextColor="red">This is red! 🔴</h2>
+    <h2 appTextColor="blue">This is blue! 🔵</h2>
+    <h2 appTextColor="#ff6b6b">This is coral! 🌸</h2>
+    <h2 appTextColor="purple">This is purple! 💜</h2>
+  </div>
+
+  <div style="background-color: #e8f5e9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+    <h3 style="color: #2e7d32; margin-top: 0;">Different Elements with Colors</h3>
+    <p appTextColor="darkblue">This is a paragraph with dark blue text.</p>
+    <p appTextColor="orange">This is a paragraph with orange text.</p>
+    <span appTextColor="magenta" style="font-size: 18px; font-weight: bold;">This is a span with magenta text.</span>
+  </div>
+
+  <!-- NEW: Text Transform Section -->
+  <div style="margin-top: 50px;">
+    <h1 style="text-align: center; color: #333;">Attribute Directive: Text Transform ✨</h1>
+    <p style="text-align: center; color: #666; margin-bottom: 40px;">
+      This directive transforms text in various creative ways!
+    </p>
+
+    <div style="background-color: #f5f5f5; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+      <h2 appTextTransform="uppercase">hello world - this will be uppercase!</h2>
+      <h2 appTextTransform="lowercase">HELLO WORLD - THIS WILL BE LOWERCASE!</h2>
+      <h2 appTextTransform="capitalize">hello world - this will be capitalized!</h2>
+      <h2 appTextTransform="reverse">Hello World - This will be reversed!</h2>
+      <h2 appTextTransform="alternate">hello world - this will alternate case!</h2>
+    </div>
+
+    <div style="background-color: #e3f2fd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+      <h3 style="color: #1565c0; margin-top: 0;">🎭 Combined: Color + Transform</h3>
+      <p appTextColor="red" appTextTransform="uppercase" style="font-size: 20px; font-weight: bold;">
+        this is red and uppercase!
+      </p>
+      <p appTextColor="blue" appTextTransform="reverse" style="font-size: 20px; font-weight: bold;">
+        This text is blue and reversed!
+      </p>
+      <p appTextColor="green" appTextTransform="capitalize" style="font-size: 20px; font-weight: bold;">
+        this text is green and capitalized!
+      </p>
+      <p appTextColor="purple" appTextTransform="alternate" style="font-size: 20px; font-weight: bold;">
+        this text is purple with alternating case!
+      </p>
+    </div>
+
+    <div style="background-color: #fff3e0; padding: 20px; border-radius: 8px; border-left: 4px solid #ff9800;">
+      <h3 style="color: #e65100; margin-top: 0;">How Text Transform Works</h3>
+      <div style="color: #555; line-height: 1.8;">
+        <p><strong>The Directive Features:</strong></p>
+        <ul style="margin-left: 20px;">
+          <li><strong>uppercase:</strong> Converts all text to UPPERCASE</li>
+          <li><strong>lowercase:</strong> Converts all text to lowercase</li>
+          <li><strong>capitalize:</strong> Capitalizes The First Letter Of Each Word</li>
+          <li><strong>reverse:</strong> sdrawkcab txet eht sesreveR</li>
+          <li><strong>alternate:</strong> AlTeRnAtEs BeTwEeN uPpEr AnD lOwEr CaSe</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>How It Works:</strong></p>
+        <ul style="margin-left: 20px;">
+          <li><strong>@Input():</strong> Accepts the transformation type from the template</li>
+          <li><strong>ElementRef:</strong> Gets the DOM element's text content</li>
+          <li><strong>Renderer2:</strong> Safely updates the element's text content</li>
+          <li><strong>transformText():</strong> A private method that performs the actual transformation</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>Usage Examples:</strong></p>
+        <code style="background-color: #fff; padding: 10px; display: block; border-radius: 4px; margin-top: 10px;">
+          &lt;h1 appTextTransform="uppercase"&gt;hello world&lt;/h1&gt;<br>
+          &lt;p appTextTransform="reverse"&gt;This will be reversed&lt;/p&gt;<br>
+          &lt;span appTextTransform="capitalize"&gt;hello world&lt;/span&gt;
+        </code>
+        
+        <p style="margin-top: 15px;">
+          <strong>Bonus:</strong> You can combine multiple directives! Use both 
+          <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">appTextColor</code> and 
+          <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">appTextTransform</code> 
+          on the same element for colorful transformed text!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background-color: #fff3e0; padding: 20px; border-radius: 8px; border-left: 4px solid #ff9800; margin-top: 20px;">
+    <h3 style="color: #e65100; margin-top: 0;">How Text Color Works</h3>
+    <div style="color: #555; line-height: 1.8;">
+      <p><strong>The Directive:</strong></p>
+      <ul style="margin-left: 20px;">
+        <li><strong>@Input():</strong> Accepts a color value from the template</li>
+        <li><strong>ElementRef:</strong> References the DOM element where the directive is applied</li>
+        <li><strong>Renderer2:</strong> Safely manipulates the DOM to set the color style</li>
+        <li><strong>ngOnInit():</strong> Applies the color when the component initializes</li>
+      </ul>
+      
+      <p style="margin-top: 15px;"><strong>Usage:</strong></p>
+      <code style="background-color: #fff; padding: 10px; display: block; border-radius: 4px; margin-top: 10px;">
+        &lt;h1 appTextColor="green"&gt;This is green!&lt;/h1&gt;
+      </code>
+      
+      <p style="margin-top: 15px;">
+        The directive accepts any valid CSS color value: named colors (red, blue), hex codes (#ff0000), 
+        RGB values (rgb(255, 0, 0)), or any other CSS color format!
+      </p>
+    </div>
+  </div>
+</div>

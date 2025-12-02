@@ -1,0 +1,46 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h1 style="color: #333; text-align: center;">NgFor Structural Directive Demo 🌍</h1>
+  <p style="text-align: center; color: #666; margin-bottom: 40px;">
+    Displaying a list of countries using *ngFor
+  </p>
+
+  <!-- Country List -->
+  <div style="background-color: #f5f5f5; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+    <h2 style="color: #555; margin-top: 0;">Countries List:</h2>
+    <ul style="font-size: 18px; line-height: 2; color: #333;">
+      <li *ngFor="let country of countries">{{ country }}</li>
+    </ul>
+  </div>
+
+  <!-- Styled Version -->
+  <div style="background-color: #e8f5e9; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+    <h2 style="color: #2e7d32; margin-top: 0;">Styled Country List with Index:</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li 
+        *ngFor="let country of countries; let i = index" 
+        style="background-color: white; margin-bottom: 10px; padding: 15px; border-radius: 6px; border-left: 4px solid #4CAF50; font-size: 16px;"
+      >
+        <strong>{{ i + 1 }}.</strong> {{ country }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- With Real Flags -->
+  <div style="background-color: #fff3e0; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+    <h2 style="color: #e65100; margin-top: 0;">Country List with Real Flags:</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li 
+        *ngFor="let country of countries; let i = index" 
+        style="background-color: white; margin-bottom: 12px; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 18px; display: flex; align-items: center;"
+      >
+        <img 
+          [src]="getFlagUrl(country)" 
+          [alt]="country + ' flag'" 
+          style="width: 40px; height: auto; margin-right: 15px; border: 1px solid #ddd; border-radius: 3px;"
+        />
+        <span><strong>{{ country }}</strong></span>
+      </li>
+    </ul>
+  </div>
+
+  </div>

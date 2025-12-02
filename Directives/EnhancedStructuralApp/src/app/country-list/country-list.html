@@ -1,0 +1,20 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h1 style="color: #333; text-align: center;">NgFor Task</h1>
+  
+  <div style="background-color: #fff3e0; padding: 30px; border-radius: 8px; margin-bottom: 20px;">
+    <h2 style="color: #e65100; margin-top: 0;">Country List with Flags:</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li 
+        *ngFor="let country of countries; let i = index" 
+        style="background-color: white; margin-bottom: 12px; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 18px; display: flex; align-items: center;"
+      >
+        <img 
+          [src]="getFlagUrl(country)" 
+          [alt]="country + ' flag'" 
+          style="width: 40px; height: auto; margin-right: 15px; border: 1px solid #ddd; border-radius: 3px;"
+        />
+        <span><strong>{{ country }}</strong></span>
+      </li>
+    </ul>
+  </div>
+</div>

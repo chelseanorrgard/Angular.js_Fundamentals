@@ -1,0 +1,63 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h1 style="color: #333; text-align: center;">NgSwitch Structural Directive Demo 🔀</h1>
+  <p style="text-align: center; color: #666; margin-bottom: 40px;">
+    Click the buttons to switch between different views using *ngSwitch
+  </p>
+
+  <!-- Buttons -->
+  <div style="text-align: center; margin-bottom: 40px;">
+    <button 
+      (click)="setView('name')"
+      [style.backgroundColor]="selectedView === 'name' ? '#4CAF50' : '#e0e0e0'"
+      [style.color]="selectedView === 'name' ? 'white' : '#333'"
+      style="padding: 12px 24px; border: 2px solid #333; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; margin: 5px;"
+    >
+      Name
+    </button>
+    
+    <button 
+      (click)="setView('age')"
+      [style.backgroundColor]="selectedView === 'age' ? '#4CAF50' : '#e0e0e0'"
+      [style.color]="selectedView === 'age' ? 'white' : '#333'"
+      style="padding: 12px 24px; border: 2px solid #333; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; margin: 5px;"
+    >
+      Age
+    </button>
+    
+    <button 
+      (click)="setView('job')"
+      [style.backgroundColor]="selectedView === 'job' ? '#4CAF50' : '#e0e0e0'"
+      [style.color]="selectedView === 'job' ? 'white' : '#333'"
+      style="padding: 12px 24px; border: 2px solid #333; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; margin: 5px;"
+    >
+      Job
+    </button>
+  </div>
+
+  <!-- NgSwitch Content -->
+  <div [ngSwitch]="selectedView" style="background-color: #f5f5f5; padding: 40px; border-radius: 8px; min-height: 150px; text-align: center;">
+    
+    <div *ngSwitchCase="'name'">
+      <h2 style="color: #333; margin-top: 0;">Name</h2>
+      <p style="font-size: 20px; color: #555;">My name is Chelsea.</p>
+    </div>
+
+    <div *ngSwitchCase="'age'">
+      <h2 style="color: #333; margin-top: 0;">Age</h2>
+      <p style="font-size: 20px; color: #555;">I am 41 years old.</p>
+    </div>
+
+    <div *ngSwitchCase="'job'">
+      <h2 style="color: #333; margin-top: 0;">Job</h2>
+      <p style="font-size: 20px; color: #555;">I work as a Registered Nurse.</p>
+    </div>
+
+    <div *ngSwitchDefault>
+      <h2 style="color: #333; margin-top: 0;">Welcome! 👋</h2>
+      <p style="font-size: 20px; color: #555;">Please select a button above to view different information.</p>
+      <p style="font-size: 16px; color: #999; font-style: italic; margin-top: 20px;">This is the default view</p>
+    </div>
+
+  </div>
+
+</div>

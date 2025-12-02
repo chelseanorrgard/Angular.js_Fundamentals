@@ -1,0 +1,60 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif; text-align: center;">
+  <h1 style="color: #333;">NgIf Structural Directive Demo 🖼️</h1>
+  <p style="color: #666; margin-bottom: 40px;">
+    Click the button to show or hide the image using *ngIf
+  </p>
+
+  <button 
+    (click)="toggleImage()"
+    style="padding: 12px 24px; border: 2px solid #333; border-radius: 8px; cursor: pointer; background-color: #4CAF50; color: white; font-size: 16px; font-weight: bold; margin-bottom: 30px;"
+  >
+    {{ showImage ? 'Hide Image' : 'Show Image' }}
+  </button>
+
+  <!-- NgIf Directive -->
+  <div *ngIf="showImage" style="margin-top: 20px;">
+    <img 
+      src="https://angular.dev/assets/images/press-kit/angular_wordmark_gradient.png" 
+      alt="Angular Logo" 
+      style="max-width: 500px; width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+    />
+    <p style="color: #555; margin-top: 15px; font-style: italic;">
+      The Angular logo appears when showImage = true
+    </p>
+  </div>
+
+  <div *ngIf="!showImage" style="margin-top: 20px; padding: 40px; background-color: #f5f5f5; border-radius: 8px;">
+    <p style="color: #999; font-size: 18px;">
+      🚫 Image is hidden! Click the button to show it.
+    </p>
+  </div>
+
+  <!-- Explanation Section -->
+  <div style="margin-top: 50px; background-color: #e3f2fd; padding: 20px; border-radius: 8px; border-left: 4px solid #2196F3; text-align: left;">
+    <h3 style="color: #1565c0; margin-top: 0;">How NgIf Works</h3>
+    <div style="color: #555; line-height: 1.8;">
+      <p><strong>What is *ngIf?</strong></p>
+      <p>
+        *ngIf is a structural directive that conditionally adds or removes elements from the DOM. 
+        When the condition is <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">false</code>, 
+        Angular completely removes the element and its children from the DOM (not just hiding it with CSS).
+      </p>
+      
+      <p style="margin-top: 15px;"><strong>In this example:</strong></p>
+      <ul style="margin-left: 20px;">
+        <li><code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">showImage</code> is a boolean variable</li>
+        <li><code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">*ngIf="showImage"</code> shows the image when true</li>
+        <li><code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">*ngIf="!showImage"</code> shows a message when false</li>
+        <li>The button calls <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">toggleImage()</code> to flip the boolean</li>
+      </ul>
+
+      <p style="margin-top: 15px;"><strong>Key Points:</strong></p>
+      <ul style="margin-left: 20px;">
+        <li>Elements are <strong>removed from the DOM</strong>, not just hidden with CSS</li>
+        <li>This <strong>frees up memory and resources</strong></li>
+        <li>The asterisk (*) is shorthand for <code style="background-color: #fff; padding: 2px 6px; border-radius: 3px;">&lt;ng-template&gt;</code></li>
+        <li>Great for conditional rendering based on user state, permissions, or data availability</li>
+      </ul>
+    </div>
+  </div>
+</div>

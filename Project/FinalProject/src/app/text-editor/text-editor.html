@@ -1,0 +1,71 @@
+<div class="editor-container">
+  <div class="hero-section">
+    <h1 class="page-title">Text Editor</h1>
+    <p class="subtitle">Making your text do things it never asked for</p>
+  </div>
+
+  <div class="editor-wrapper">
+    <div class="input-section">
+      <h2>Input</h2>
+      <textarea 
+        [(ngModel)]="inputText" 
+        placeholder="Type or paste your text here... Go ahead, I dare you to write something embarrassing."
+        class="text-area"
+      ></textarea>
+    </div>
+
+    <div class="controls-section">
+      <h2>Text Transformations</h2>
+      <div class="button-grid">
+        <button (click)="toUpperCase()" class="control-button">UPPERCASE</button>
+        <button (click)="toLowerCase()" class="control-button">lowercase</button>
+        <button (click)="toTitleCase()" class="control-button">Title Case</button>
+        <button (click)="reverse()" class="control-button">Reverse</button>
+        <button (click)="alternatingCase()" class="control-button">AlTeRnAtInG</button>
+        <button (click)="removeSpaces()" class="control-button">Remove Spaces</button>
+        <button (click)="countWords()" class="control-button">Count Words</button>
+        <button (click)="countCharacters()" class="control-button">Count Characters</button>
+      </div>
+      
+      <div class="action-buttons">
+        <button (click)="copyToClipboard()" class="action-button copy-button" [disabled]="!outputText">
+          Copy Output
+        </button>
+        <button (click)="clearAll()" class="action-button clear-button">
+          Clear All
+        </button>
+      </div>
+    </div>
+
+    <div class="output-section">
+      <h2>Output</h2>
+      <div class="output-box">
+        {{ outputText || 'Your transformed text will appear here...' }}
+      </div>
+    </div>
+
+    <div class="history-section">
+      <h2>Operation History</h2>
+      <div class="history-box">
+        <div *ngIf="operationHistory.length === 0"
+        class="no-history">
+No operations yet. Click a button to get started!
+</div>
+<div *ngFor="let item of operationHistory" class="history-item">
+{{ item }}
+</div>
+</div>
+</div>
+  </div>
+  <div class="info-section">
+    <h2>What's This About?</h2>
+    <p>
+      This text editor lets you manipulate text in various ways. Because sometimes you need your text to SHOUT, 
+      whisper, or do that irritating alternating case thing that makes you look like you're stuck in 2005.
+    </p>
+    <p>
+      Built using two-way data binding with ngModel, string manipulation methods, and a healthy dose of "why not?" 
+      It keeps a history of your last 10 operations, so you can track your descent into text transformation madness.
+    </p>
+  </div>
+</div>

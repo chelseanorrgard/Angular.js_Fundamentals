@@ -1,0 +1,79 @@
+<div class="rick-morty-container">
+  <div class="hero-section">
+    <h1 class="page-title">Rick & Morty Character Explorer</h1>
+    <p class="subtitle">Because if I'm using APIs, it might as well involve interdimensional chaos</p>
+  </div>
+
+  <div class="intro-box">
+    <h2>Why Rick and Morty?</h2>
+    <p>
+      When you're learning how to integrate APIs into your Angular application, you have a choice. 
+      You can use some boring weather API and pretend you care about the temperature in Vaasa, or you 
+      can dive into the multiverse with Rick and Morty. I chose chaos.
+    </p>
+    <p>
+      This component uses Angular's HttpClient to fetch data from the Rick and Morty API, handles asynchronous 
+      operations with Observables, and displays random characters because predictability is for people without 
+      portal guns.
+    </p>
+    <button (click)="showRandomCharacters()" class="shuffle-button" [disabled]="loading">
+      Get Random Characters
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading-box">
+    <div class="spinner"></div>
+    <p>Loading characters from across the multiverse...</p>
+  </div>
+
+  <div *ngIf="error" class="error-box">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && !error" class="characters-grid">
+    <div *ngFor="let character of displayedCharacters" class="character-card">
+      <img [src]="character.image" [alt]="character.name" class="character-image">
+      <div class="character-info">
+        <h3 class="character-name">{{ character.name }}</h3>
+        <div class="character-detail">
+          <span class="status-indicator" [style.backgroundColor]="getStatusColor(character.status)"></span>
+          <span>{{ character.status }} - {{ character.species }}</span>
+        </div>
+        <div class="character-detail">
+          <strong>Gender:</strong> {{ character.gender }}
+        </div>
+        <div class="character-detail">
+          <strong>Origin:</strong> {{ character.origin.name }}
+        </div>
+        <div class="character-detail">
+          <strong>Location:</strong> {{ character.location.name }}
+        </div>
+        <div class="character-detail">
+          <strong>Episodes:</strong> {{ character.episode.length }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tech-info">
+    <h2>Technical Details</h2>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h3>HTTP Client</h3>
+        <p>Uses Angular's HttpClient service to make GET requests to the Rick and Morty API</p>
+      </div>
+      <div class="tech-card">
+        <h3>Observables</h3>
+        <p>Handles asynchronous data streams using RxJS Observables and the subscribe method</p>
+      </div>
+      <div class="tech-card">
+        <h3>Type Safety</h3>
+        <p>Implements TypeScript interfaces for API responses to ensure type checking</p>
+      </div>
+      <div class="tech-card">
+        <h3>Error Handling</h3>
+        <p>Includes proper error handling for failed API requests with user-friendly messages</p>
+      </div>
+    </div>
+  </div>
+</div>

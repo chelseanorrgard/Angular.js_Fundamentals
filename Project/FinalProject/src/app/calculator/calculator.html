@@ -1,0 +1,51 @@
+<div class="calculator-container">
+  <div class="hero-section">
+    <h1 class="page-title">Calculator</h1>
+    <p class="subtitle">Because your phone's calculator is all the way over there</p>
+  </div>
+
+  <div class="calculator-wrapper">
+    <div class="calculator">
+      <div class="display">{{ display }}</div>
+      
+      <div class="buttons">
+        <button (click)="clear()" class="button function-button">C</button>
+        <button (click)="performOperation('/')" class="button operator-button">/</button>
+        <button (click)="performOperation('*')" class="button operator-button">×</button>
+        <button (click)="performOperation('-')" class="button operator-button">−</button>
+        
+        <button (click)="inputDigit('7')" class="button">7</button>
+        <button (click)="inputDigit('8')" class="button">8</button>
+        <button (click)="inputDigit('9')" class="button">9</button>
+        <button (click)="performOperation('+')" class="button operator-button">+</button>
+        
+        <button (click)="inputDigit('4')" class="button">4</button>
+        <button (click)="inputDigit('5')" class="button">5</button>
+        <button (click)="inputDigit('6')" class="button">6</button>
+        <button (click)="equals()" class="button equals-button" style="grid-row: span 2;">=</button>
+        
+        <button (click)="inputDigit('1')" class="button">1</button>
+        <button (click)="inputDigit('2')" class="button">2</button>
+        <button (click)="inputDigit('3')" class="button">3</button>
+        
+        <button (click)="inputDigit('0')" class="button" style="grid-column: span 2;">0</button>
+        <button (click)="inputDecimal()" class="button">.</button>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>How It Works</h2>
+      <p>
+        This calculator performs basic arithmetic operations: addition, subtraction, multiplication, and division. 
+        It's built using Angular event binding to handle button clicks and TypeScript methods to perform calculations.
+      </p>
+      <p>
+        Features include decimal support, error handling for division by zero (because apparently that breaks math), 
+        and a clear button for when you inevitably mess up.
+      </p>
+      <p class="fun-fact">
+        Fun fact: I could have just used eval(), but then my code would be as cursed as dividing by zero.
+      </p>
+    </div>
+  </div>
+</div>

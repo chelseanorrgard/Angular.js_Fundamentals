@@ -1,0 +1,22 @@
+<div class="app-container">
+  <header class="header">
+    <div class="header-content">
+      <h1 class="site-title">Chelsea's Final Project Nightmare</h1>
+      <p class="site-subtitle">Four views, ridiculous possibilities, the same unicorn color scheme I used in the routing assignment.</p>
+    </div>
+    <nav class="navigation">
+      <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+      <a routerLink="/calculator" routerLinkActive="active" class="nav-link">Calculator</a>
+      <a routerLink="/text-editor" routerLinkActive="active" class="nav-link">Text Editor</a>
+      <a routerLink="/rick-morty" routerLinkActive="active" class="nav-link">Rick & Morty</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer">
+    <p>Built with Angular, caffeine, and questionable life choices</p>
+  </footer>
+</div>

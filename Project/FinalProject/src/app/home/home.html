@@ -1,0 +1,56 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1 class="page-title">Welcome to My Final Project</h1>
+    <p class="intro-text">
+      This is it - everything I've learned along with some I already knew. Four views, each showcasing different Angular concepts, 
+      all wrapped in a color scheme that would make a unicorn jealous. 
+    </p>
+  </div>
+
+  <div class="views-grid">
+    <div *ngFor="let view of views" class="view-card" [style.borderLeftColor]="view.color">
+      <h2 class="view-title" [style.color]="view.color">{{ view.name }}</h2>
+      <div class="view-content">
+        <h3>What It Does:</h3>
+        <p>{{ view.description }}</p>
+        
+        <h3>How It Was Built:</h3>
+        <p>{{ view.tech }}</p>
+        
+        <a [routerLink]="view.route" class="view-button" [style.backgroundColor]="view.color">
+          Check It Out
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tech-summary">
+    <h2>Technologies & Concepts Used</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <h3>Routing</h3>
+        <p>Angular Router for navigation between views with active link highlighting</p>
+      </div>
+      <div class="tech-item">
+        <h3>Components</h3>
+        <p>Standalone components with proper separation of concerns</p>
+      </div>
+      <div class="tech-item">
+        <h3>Data Binding</h3>
+        <p>Two-way binding, property binding, and event binding throughout</p>
+      </div>
+      <div class="tech-item">
+        <h3>Directives</h3>
+        <p>Structural directives like *ngIf and *ngFor, plus custom attribute directives</p>
+      </div>
+      <div class="tech-item">
+        <h3>Pipes</h3>
+        <p>Both built-in and custom pipes for data transformation</p>
+      </div>
+      <div class="tech-item">
+        <h3>HTTP Client</h3>
+        <p>API integration with observables and async operations</p>
+      </div>
+    </div>
+  </div>
+</div>

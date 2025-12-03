@@ -1,0 +1,28 @@
+<div class="app-container">
+  <!-- Header/Navigation -->
+  <header class="header">
+    <div class="header-content">
+      <h1 class="site-title">Chelsea Norrgård</h1>
+      <p class="site-subtitle">Software Developer & Digital Problem Solver</p>
+    </div>
+    <nav class="navigation">
+      <a routerLink="/about" routerLinkActive="active" class="nav-link">About Me</a>
+      <a routerLink="/skills" routerLinkActive="active" class="nav-link">Skills</a>
+      <a routerLink="/experience" routerLinkActive="active" class="nav-link">Experience</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>📧 chelseanorrgard@gmail.com | 📱 +358 045 699 9388 | 📍 Vaasa, Finland</p>
+    <p>
+      <a href="https://chelseanorrgard.vercel.app/" target="_blank" class="footer-link">Portfolio</a> | 
+      <a href="https://github.com/chelseanorrgard" target="_blank" class="footer-link">GitHub</a>
+    </p>
+  </footer>
+</div>

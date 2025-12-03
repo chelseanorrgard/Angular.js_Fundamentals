@@ -1,0 +1,71 @@
+<div class="skills-container">
+  <div class="hero-section">
+    <h1 class="page-title">Skills & Technologies</h1>
+    <p class="tagline">Tools I use to build things that hopefully work</p>
+  </div>
+
+  <div class="content-card">
+    <section class="skills-section">
+      <h2 class="section-title">Programming & Development</h2>
+      <div class="skills-grid">
+        <div *ngFor="let skill of programmingSkills" class="skill-card">
+          <div class="skill-header">
+            <h3 class="skill-name">{{ skill.name }}</h3>
+            <span class="skill-badge" [style.backgroundColor]="skill.color">{{ skill.level }}</span>
+          </div>
+          <div class="skill-bar">
+            <div 
+              class="skill-progress" 
+              [style.width]="skill.level === 'Advanced' ? '90%' : '70%'"
+              [style.backgroundColor]="skill.color"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <h2 class="section-title">Tools & Technologies</h2>
+      <div class="tools-grid">
+        <div *ngFor="let tool of tools" class="tool-tag">
+          {{ tool }}
+        </div>
+      </div>
+    </section>
+
+    <section class="languages-section">
+      <h2 class="section-title">Languages</h2>
+      <div class="languages-grid">
+        <div *ngFor="let lang of languages" class="language-card">
+          <h3>{{ lang.language }}</h3>
+          <p>{{ lang.proficiency }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-skills-section">
+      <h2 class="section-title">Beyond the Code</h2>
+      <p class="soft-skills-intro">
+        Technical skills are great, but they're only part of the picture. Here's what else I bring to the table:
+      </p>
+      <div class="soft-skills-grid">
+        <div class="soft-skill-item">
+          <h3>Problem Solving</h3>
+          <p>Years of debugging everything from passport applications to frequency converters has taught me to approach problems systematically.</p>
+        </div>
+        <div class="soft-skill-item">
+          <h3>Team Collaboration</h3>
+          <p>Whether leading a development team or working as part of one, I know how to communicate clearly and support collective goals.</p>
+        </div>
+        <div class="soft-skill-item">
+          <h3>Adaptability</h3>
+          <p>My career path proves I can learn new fields quickly. Nursing to manufacturing to software development? Challenge accepted.</p>
+        </div>
+        <div class="soft-skill-item">
+          <h3>Attention to Detail</h3>
+          <p>When you've worked in healthcare and quality control, you learn that details matter. A lot.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

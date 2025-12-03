@@ -1,0 +1,62 @@
+<div class="experience-container">
+  <div class="hero-section">
+    <h1 class="page-title">Experience & Projects</h1>
+    <p class="tagline">The winding road from passports to Python</p>
+  </div>
+
+  <div class="content-card">
+    <!-- Work Experience Section -->
+    <section class="work-section">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div *ngFor="let job of workExperience" class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="job-header">
+              <div>
+                <h3 class="job-title">{{ job.position }}</h3>
+                <h4 class="company-name">{{ job.company }}</h4>
+              </div>
+              <div class="job-meta">
+                <span class="job-period">{{ job.period }}</span>
+                <span class="job-location">{{ job.location }}</span>
+              </div>
+            </div>
+            <ul class="job-description">
+              <li *ngFor="let item of job.description">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div *ngFor="let project of projects" class="project-card">
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-tech">{{ project.tech }}</p>
+          <p class="project-description">{{ project.description }}</p>
+          <a [href]="project.github" target="_blank" class="project-link">
+            View on GitHub →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+      <h2 class="section-title">Education</h2>
+      <div class="education-grid">
+        <div *ngFor="let edu of education" class="education-card">
+          <h3 class="degree-title">{{ edu.degree }}</h3>
+          <h4 class="school-name">{{ edu.school }}</h4>
+          <div class="edu-meta">
+        <span class="edu-period">{{ edu.period }}</span>
+        <span class="edu-location">{{ edu.location }}</span>
+      </div>
+      <p *ngIf="edu.gpa" class="edu-gpa">{{ edu.gpa }}</p>
+    </div>
+  </div>
+</section>

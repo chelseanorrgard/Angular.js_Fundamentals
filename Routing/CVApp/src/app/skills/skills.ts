@@ -10,11 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class Skills {
   programmingSkills = [
-    { name: 'JavaScript', level: 'Advanced', color: '#f7df1e' },
+    { name: 'JavaScript', level: 'Advanced', color: '#61dafb' },
     { name: 'React & React Native', level: 'Advanced', color: '#61dafb' },
     { name: 'Node.js', level: 'Intermediate', color: '#339933' },
     { name: 'Python', level: 'Intermediate', color: '#3776ab' },
-    { name: 'HTML5 & CSS3', level: 'Advanced', color: '#e34f26' },
+    { name: 'HTML5 & CSS3', level: 'Advanced', color: '#61dafb' },
     { name: 'MongoDB', level: 'Intermediate', color: '#47a248' },
     { name: 'Firebase', level: 'Intermediate', color: '#ffca28' }
   ];
@@ -29,8 +29,8 @@ export class Skills {
   ];
 
   languages = [
-    { language: 'English', proficiency: 'Native' },
-    { language: 'Swedish', proficiency: 'Good' },
-    { language: 'Finnish', proficiency: 'Satisfactory' }
+    { language: 'English', proficiency: 'Native (Fluent)' },
+    { language: 'Swedish', proficiency: 'Good (B2)' },
+    { language: 'Finnish', proficiency: 'Satisfactory (B1)' }
   ];
 }
